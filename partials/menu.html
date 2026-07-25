@@ -1,0 +1,69 @@
+<section class="menu-page-header">
+  <div class="section-inner">
+    <span class="section-eyebrow">Our Menu</span>
+    <h1>What would you like today?</h1>
+    <p>Soups, swallows, grills, snacks, drinks and more — made fresh, served with love.</p>
+  </div>
+</section>
+
+<nav class="category-nav" aria-label="Menu categories">
+  <div class="category-nav-inner">
+    <button class="filter-btn active" data-category="All" aria-pressed="true">All</button>
+    <button class="filter-btn" data-category="Main Courses" aria-pressed="false">Main Courses</button>
+    <button class="filter-btn" data-category="Appetizers" aria-pressed="false">Appetizers</button>
+    <button class="filter-btn" data-category="Snacks" aria-pressed="false">Snacks</button>
+    <button class="filter-btn" data-category="Swallows" aria-pressed="false">Swallows</button>
+    <button class="filter-btn" data-category="Soups" aria-pressed="false">Soups</button>
+    <button class="filter-btn" data-category="Proteins" aria-pressed="false">Proteins</button>
+    <button class="filter-btn" data-category="Sides" aria-pressed="false">Sides</button>
+    <button class="filter-btn" data-category="Desserts" aria-pressed="false">Desserts</button>
+    <button class="filter-btn" data-category="Drinks" aria-pressed="false">Drinks</button>
+    <button class="filter-btn" data-category="Wines" aria-pressed="false">Wines</button>
+    <button class="filter-btn" data-category="Favourites" aria-pressed="false">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true" style="margin-right:4px;vertical-align:-1px;">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+      Favourites
+    </button>
+  </div>
+</nav>
+
+<div class="sort-bar" id="sort-bar">
+  <div class="sort-bar-inner">
+    <div class="active-filters" id="active-filters" aria-live="polite"></div>
+    <div class="sort-controls">
+      <label for="sort-select" class="sort-label">Sort:</label>
+      <select id="sort-select" class="form-select sort-select" aria-label="Sort menu items">
+        <option value="default">Default</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="name-asc">A — Z</option>
+        <option value="name-desc">Z — A</option>
+        <option value="rating-desc">Top Rated</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="menu-section">
+  <div class="featured-section" id="featured-section" aria-label="Featured dishes" hidden></div>
+
+  <div class="shimmer-grid grid-auto" id="shimmer" aria-hidden="true"></div>
+
+  <h2 class="featured-heading" id="menu-heading" hidden>
+    <span>Full Menu</span>
+  </h2>
+
+  <div class="menu-grid grid-auto" id="menu-container" aria-live="polite" aria-label="Menu items"></div>
+
+  <div class="empty-state" id="empty-state" hidden role="status">
+    <div class="icon-circle" aria-hidden="true" style="width:64px;height:64px;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/>
+      </svg>
+    </div>
+    <h2 class="empty-title">Nothing found</h2>
+    <p class="empty-desc">Try a different search or browse all categories.</p>
+    <button class="btn btn-primary" id="empty-reset-btn">Browse All</button>
+  </div>
+</div>

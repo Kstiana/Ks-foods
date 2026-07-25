@@ -1,0 +1,80 @@
+<section class="reviews-page section">
+  <div class="section-inner">
+    <span class="section-eyebrow">Reviews</span>
+    <h1>What Our Guests Say</h1>
+
+    <div class="reviews-summary card">
+      <div class="reviews-summary-score">
+        <span class="reviews-average" id="reviews-average">0.0</span>
+        <div class="reviews-average-stars" id="reviews-average-stars"></div>
+        <span class="reviews-count" id="reviews-count">0 reviews</span>
+      </div>
+      <div class="reviews-distribution" id="reviews-distribution"></div>
+    </div>
+
+    <div class="reviews-toolbar">
+      <div class="reviews-filter-tabs" id="reviews-filter-tabs">
+        <button class="filter-btn active" data-rating-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-rating-filter="5" aria-pressed="false">5 Star</button>
+        <button class="filter-btn" data-rating-filter="4" aria-pressed="false">4 Star</button>
+        <button class="filter-btn" data-rating-filter="3" aria-pressed="false">3 Star</button>
+        <button class="filter-btn" data-rating-filter="2" aria-pressed="false">2 Star</button>
+        <button class="filter-btn" data-rating-filter="1" aria-pressed="false">1 Star</button>
+      </div>
+      <div class="reviews-sort-and-write">
+        <select class="form-select" id="reviews-sort-select" aria-label="Sort reviews">
+          <option value="newest">Newest</option>
+          <option value="highest">Highest Rated</option>
+          <option value="lowest">Lowest Rated</option>
+        </select>
+        <button class="btn btn-primary btn-sm" id="write-review-btn">Write a Review</button>
+      </div>
+    </div>
+
+    <div class="reviews-list" id="reviews-list"></div>
+
+    <div class="empty-state" id="reviews-empty" hidden>
+      <div class="icon-circle" aria-hidden="true" style="width:56px;height:56px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="empty-title">No reviews in this category</p>
+    </div>
+  </div>
+</section>
+
+<div class="modal-overlay modal-plain" id="review-form-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Write a review">
+  <div class="modal">
+    <div class="modal-plain-body">
+      <h2 class="modal-plain-title">Write a Review</h2>
+      <form class="auth-form" id="review-form" novalidate style="width:100%;text-align:left;">
+        <div class="form-group">
+          <label class="form-label">Your Rating</label>
+          <div class="rating" id="review-rating-input" role="radiogroup" aria-label="Your rating">
+            <input type="radio" id="review-star-5" name="reviewRating" value="5" />
+            <label for="review-star-5" aria-label="5 stars"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></label>
+            <input type="radio" id="review-star-4" name="reviewRating" value="4" />
+            <label for="review-star-4" aria-label="4 stars"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></label>
+            <input type="radio" id="review-star-3" name="reviewRating" value="3" />
+            <label for="review-star-3" aria-label="3 stars"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></label>
+            <input type="radio" id="review-star-2" name="reviewRating" value="2" />
+            <label for="review-star-2" aria-label="2 stars"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></label>
+            <input type="radio" id="review-star-1" name="reviewRating" value="1" />
+            <label for="review-star-1" aria-label="1 star"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="review-title">Title</label>
+          <input type="text" class="form-input" id="review-title" name="title" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="review-body">Your Review</label>
+          <textarea class="form-textarea" id="review-body" name="body" required></textarea>
+        </div>
+        <div class="modal-plain-actions">
+          <button type="button" class="btn btn-secondary" id="review-form-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit Review</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

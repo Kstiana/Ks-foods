@@ -1,0 +1,112 @@
+<section class="checkout-page section">
+  <div class="section-inner">
+    <span class="section-eyebrow">Checkout</span>
+    <h1>Review Your Order</h1>
+
+    <div class="empty-state" id="checkout-empty" hidden>
+      <div class="icon-circle" aria-hidden="true" style="width:64px;height:64px;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+      </div>
+      <h2 class="empty-title">Your cart is empty</h2>
+      <p class="empty-desc">Add something delicious from the menu before checking out.</p>
+      <a href="/menu" data-link class="btn btn-primary">Browse Menu</a>
+    </div>
+
+    <div class="checkout-layout" id="checkout-content">
+      <form class="checkout-form" id="checkout-form" novalidate>
+        <div class="card checkout-card">
+          <h2 class="checkout-card-title">Your Order</h2>
+          <div class="checkout-items" id="checkout-items"></div>
+        </div>
+
+        <div class="card checkout-card">
+          <h2 class="checkout-card-title">Fulfilment</h2>
+          <div class="fulfilment-toggle">
+            <label class="radio-row">
+              <input type="radio" name="fulfilment" value="pickup" checked />
+              <span class="radio-mark">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span class="radio-label">Pickup</span>
+            </label>
+            <label class="radio-row">
+              <input type="radio" name="fulfilment" value="delivery" />
+              <span class="radio-mark">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span class="radio-label">Delivery</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="card checkout-card" id="delivery-fields" hidden>
+          <h2 class="checkout-card-title">Delivery Details</h2>
+
+          <div class="form-group" id="saved-address-group" hidden>
+            <label class="form-label" for="saved-address-select">Saved Address</label>
+            <select class="form-select" id="saved-address-select">
+              <option value="">Use a new address</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="checkout-name">Full Name</label>
+              <input type="text" class="form-input" id="checkout-name" name="name" autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="checkout-phone">Phone Number</label>
+              <input type="tel" class="form-input" id="checkout-phone" name="phone" autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="checkout-address">Delivery Address</label>
+            <input type="text" class="form-input" id="checkout-address" name="address" autocomplete="street-address" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="checkout-city">City</label>
+            <input type="text" class="form-input" id="checkout-city" name="city" autocomplete="address-level2" />
+          </div>
+
+          <label class="checkbox-row" id="save-address-row" hidden>
+            <input type="checkbox" id="save-address-checkbox" />
+            <span class="checkbox-mark">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <span class="checkbox-label">Save this address to my account</span>
+          </label>
+        </div>
+
+        <div class="card checkout-card">
+          <h2 class="checkout-card-title">Special Instructions <span class="form-label-optional">(optional)</span></h2>
+          <div class="form-group">
+            <textarea class="form-textarea" id="checkout-notes" name="notes" placeholder="Extra pepper, no onions, call on arrival…"></textarea>
+          </div>
+        </div>
+      </form>
+
+      <aside class="checkout-summary card">
+        <h2 class="checkout-card-title">Order Summary</h2>
+        <div class="cart-summary-row">
+          <span>Subtotal</span>
+          <span id="checkout-subtotal">₦0</span>
+        </div>
+        <div class="cart-summary-row" id="checkout-delivery-fee-row" hidden>
+          <span>Delivery Fee</span>
+          <span id="checkout-delivery-fee">₦0</span>
+        </div>
+        <div class="divider-full"></div>
+        <div class="cart-summary-row total">
+          <span>Total</span>
+          <span id="checkout-total">₦0</span>
+        </div>
+        <button type="submit" form="checkout-form" class="btn btn-primary btn-block" id="place-order-btn">Place Order</button>
+        <a href="/menu" data-link class="btn btn-secondary btn-block">Add More Items</a>
+      </aside>
+    </div>
+  </div>
+</section>

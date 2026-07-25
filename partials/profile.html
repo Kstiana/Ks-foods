@@ -1,0 +1,74 @@
+<section class="account-page section">
+  <div class="section-inner">
+    <h1 class="visually-hidden">My Account</h1>
+
+    <div class="account-header">
+      <span class="avatar account-avatar" id="profile-avatar"></span>
+      <div>
+        <h2 id="profile-name"></h2>
+        <p class="account-email" id="profile-email"></p>
+      </div>
+      <span class="badge badge-gold account-loyalty-badge" id="profile-loyalty-badge"></span>
+    </div>
+
+    <nav class="account-tabs" aria-label="Account sections">
+      <a href="/account" data-link class="account-tab active">Profile</a>
+      <a href="/account/orders" data-link class="account-tab">My Orders</a>
+    </nav>
+
+    <div class="account-grid">
+      <div class="card account-card">
+        <h3 class="checkout-card-title">Edit Profile</h3>
+        <form class="account-form" id="profile-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="profile-name-input">Full Name</label>
+            <input type="text" class="form-input" id="profile-name-input" name="name" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="profile-email-input">Email</label>
+            <input type="email" class="form-input" id="profile-email-input" name="email" disabled />
+            <span class="form-hint">Email address cannot be changed</span>
+          </div>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+      </div>
+
+      <div class="card account-card">
+        <div class="account-card-header">
+          <h3 class="checkout-card-title">Saved Addresses</h3>
+          <button class="btn btn-secondary btn-sm" id="add-address-btn">Add Address</button>
+        </div>
+        <div class="address-list" id="address-list"></div>
+        <p class="empty-desc" id="no-address-note">You haven't saved any addresses yet.</p>
+
+        <form class="address-form" id="address-form" hidden novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="address-label-input">Label</label>
+              <input type="text" class="form-input" id="address-label-input" name="label" placeholder="Home, Office…" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="address-city-input">City</label>
+              <input type="text" class="form-input" id="address-city-input" name="city" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="address-line-input">Address</label>
+            <input type="text" class="form-input" id="address-line-input" name="line1" required />
+          </div>
+          <div class="address-form-actions">
+            <button type="button" class="btn btn-secondary btn-sm" id="cancel-address-btn">Cancel</button>
+            <button type="submit" class="btn btn-primary btn-sm">Save Address</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card account-card">
+        <h3 class="checkout-card-title">Account</h3>
+        <button class="nav-auth-menu-item" id="profile-logout-btn" style="width:auto;padding:var(--space-3) 0;">
+          Log Out
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<section class="account-page section">
+  <div class="section-inner">
+    <h1 class="visually-hidden">My Orders</h1>
+
+    <nav class="account-tabs" aria-label="Account sections">
+      <a href="/account" data-link class="account-tab">Profile</a>
+      <a href="/account/orders" data-link class="account-tab active">My Orders</a>
+    </nav>
+
+    <div class="orders-list" id="orders-list"></div>
+
+    <div class="empty-state" id="orders-empty" hidden>
+      <div class="icon-circle" aria-hidden="true" style="width:64px;height:64px;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 3h16v18l-3-2-3 2-3-2-3 2-3-2-1 2z"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/>
+        </svg>
+      </div>
+      <h2 class="empty-title">No orders yet</h2>
+      <p class="empty-desc">Your order history will show up here once you place your first order.</p>
+      <a href="/menu" data-link class="btn btn-primary">Browse Menu</a>
+    </div>
+  </div>
+</section>

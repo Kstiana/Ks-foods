@@ -1,0 +1,81 @@
+<section class="reservations-page section">
+  <div class="section-inner reservations-layout">
+    <div class="reservations-main">
+      <span class="section-eyebrow">Book a Table</span>
+      <h1>Reserve Your Spot</h1>
+      <p>Tell us when you're coming and we'll have a table waiting.</p>
+
+      <form class="card reservation-form" id="reservation-form" novalidate>
+        <div class="form-row form-row-2">
+          <div class="form-group">
+            <label class="form-label" for="reservation-date">Date</label>
+            <input type="date" class="form-input" id="reservation-date" name="date" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reservation-time">Time</label>
+            <select class="form-select" id="reservation-time" name="time" required>
+              <option value="">Select a time</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row form-row-2">
+          <div class="form-group">
+            <label class="form-label" for="reservation-party-size">Party Size</label>
+            <div class="qty-stepper">
+              <button type="button" class="qty-btn" id="party-size-dec" aria-label="Decrease party size">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </button>
+              <span class="qty-value" id="party-size-value" aria-live="polite">2</span>
+              <button type="button" class="qty-btn" id="party-size-inc" aria-label="Increase party size">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </button>
+            </div>
+            <input type="hidden" id="reservation-party-size" name="partySize" value="2" />
+          </div>
+          <div class="form-group">
+            <span class="form-label">Availability</span>
+            <div class="availability-indicator" id="availability-indicator">
+              <span class="badge badge-info">Pick a date &amp; time</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row form-row-2">
+          <div class="form-group">
+            <label class="form-label" for="reservation-name">Full Name</label>
+            <input type="text" class="form-input" id="reservation-name" name="name" autocomplete="name" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reservation-phone">Phone Number</label>
+            <input type="tel" class="form-input" id="reservation-phone" name="phone" autocomplete="tel" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reservation-notes">Special Requests <span class="form-label-optional">(optional)</span></label>
+          <textarea class="form-textarea" id="reservation-notes" name="notes" placeholder="Window seat, birthday celebration, allergies…"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Confirm Reservation</button>
+      </form>
+
+      <div class="card reservation-confirmation" id="reservation-confirmation" hidden>
+        <div class="confirmation-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="16 9 11 14 8 11"/></svg>
+        </div>
+        <h2>Table Reserved</h2>
+        <p id="reservation-confirmation-details"></p>
+        <div class="reservation-confirmation-actions">
+          <button class="btn btn-secondary" id="add-to-calendar-btn">Add to Calendar</button>
+          <button class="btn btn-primary" id="book-another-btn">Book Another</button>
+        </div>
+      </div>
+    </div>
+
+    <aside class="reservations-sidebar" id="my-reservations-section" hidden>
+      <h2 class="checkout-card-title">My Reservations</h2>
+      <div class="my-reservations-list" id="my-reservations-list"></div>
+    </aside>
+  </div>
+</section>
