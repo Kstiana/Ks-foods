@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="KsFoods — Authentic Nigerian delicacies. Soups, swallows, grills, drinks and more. Order now via WhatsApp." />
+  <meta name="theme-color" content="#b01e1e" />
+
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:title" content="KsFoods" />
+  <meta property="og:description" content="Authentic Nigerian delicacies — soups, swallows, grills, drinks and more." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?auto=format&fit=crop&w=1920&q=80">
+  <meta property="og:url" content="https://KsFoods.com" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KsFoods" />
+  <meta name="twitter:description" content="Authentic Nigerian delicacies — soups, swallows, grills, drinks and more." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?auto=format&fit=crop&w=1920&q=80" />
+
+  <title>KsFoods</title>
+
+  <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/modals.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/toast.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/pages/home.css" />
+  <link rel="stylesheet" href="css/pages/menu.css" />
+  <link rel="stylesheet" href="css/pages/about.css" />
+  <link rel="stylesheet" href="css/pages/gallery.css" />
+  <link rel="stylesheet" href="css/pages/reservations.css" />
+  <link rel="stylesheet" href="css/pages/reviews.css" />
+  <link rel="stylesheet" href="css/pages/contact.css" />
+  <link rel="stylesheet" href="css/pages/faq.css" />
+  <link rel="stylesheet" href="css/pages/account.css" />
+  <link rel="stylesheet" href="css/pages/checkout.css" />
+  <link rel="stylesheet" href="css/print.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "KsFoods",
+    "description": "Authentic Nigerian delicacies",
+    "servesCuisine": "Nigerian",
+    "url": "https://KsFoods.com",
+    "telephone": "+234-000-000-0000",
+    "openingHours": "Mo-Su 08:00-22:00"
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#app">Skip to content</a>
+
+  <div id="header-mount"></div>
+
+  <main id="app" class="page" aria-live="polite"></main>
+
+  <div id="footer-mount"></div>
+
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
+  <aside class="drawer cart-drawer" id="cart-drawer" aria-label="Your cart" aria-hidden="true" role="dialog">
+    <div class="drawer-header">
+      <h2 class="drawer-title">Your Order</h2>
+      <button class="icon-btn" id="cart-close-btn" aria-label="Close cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-body" id="cart-items" aria-live="polite">
+      <div class="empty-state" id="cart-empty">
+        <div class="icon-circle" aria-hidden="true" style="width:56px;height:56px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+        </div>
+        <p class="empty-title">Your cart is empty</p>
+        <p class="empty-desc">Add items from the menu to get started.</p>
+      </div>
+    </div>
+
+    <div class="drawer-footer" id="cart-footer" hidden>
+      <div class="cart-summary-row total">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">₦0</span>
+      </div>
+      <a href="/checkout" class="btn btn-primary btn-block" data-link id="cart-checkout-btn">Review Order</a>
+      <button class="btn btn-ghost-danger btn-block" id="cart-clear-btn">Clear Order</button>
+    </div>
+  </aside>
+
+  <div class="drawer-overlay" id="cart-overlay" aria-hidden="true"></div>
+
+  <div class="modal-overlay" id="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Item details">
+    <div class="modal" id="modal">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close item details">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="modal-image-wrap">
+        <img class="modal-image" id="modal-image" src="" alt="" loading="lazy" />
+        <div class="modal-category-badge" id="modal-category-badge"></div>
+      </div>
+      <div class="modal-body">
+        <h2 class="modal-name" id="modal-name"></h2>
+        <p class="modal-description" id="modal-description"></p>
+        <div class="modal-rating" id="modal-rating"></div>
+        <div class="modal-footer">
+          <span class="modal-price" id="modal-price"></span>
+          <div class="modal-qty">
+            <button class="qty-btn" id="modal-qty-dec" aria-label="Decrease quantity">−</button>
+            <span class="qty-value" id="modal-qty-value" aria-live="polite">1</span>
+            <button class="qty-btn" id="modal-qty-inc" aria-label="Increase quantity">+</button>
+          </div>
+          <button class="btn btn-primary" id="modal-add-to-cart">Add to Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <script type="module" src="js/app.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .catch(err => console.error('SW registration failed:', err));
+      });
+    }
+  </script>
+</body>
+</html>
