@@ -1,0 +1,132 @@
+@media print {
+  *,
+  *::before,
+  *::after {
+    box-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #111;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  .site-header,
+  .primary-nav,
+  .nav-overlay,
+  .mobile-nav-toggle,
+  .nav-auth,
+  .hero,
+  .hero-pattern,
+  .sort-bar,
+  .drawer,
+  .drawer-overlay,
+  .cart-overlay,
+  .modal-overlay,
+  .toast-container,
+  .back-to-top,
+  .site-footer,
+  .menu-item-fav-btn,
+  .menu-item-add-btn,
+  .menu-item-category-badge,
+  .category-nav,
+  .btn,
+  .no-print {
+    display: none !important;
+  }
+
+  .menu-section {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .menu-grid,
+  .grid-auto {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12pt;
+    page-break-inside: avoid;
+  }
+
+  .menu-item,
+  .card {
+    border: 0.5pt solid #ccc;
+    border-radius: 6pt;
+    break-inside: avoid;
+    box-shadow: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .menu-item-image-wrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  .menu-item-description {
+    display: block;
+    -webkit-line-clamp: unset;
+    font-size: 9pt;
+    color: #444;
+  }
+
+  .menu-item-name {
+    font-size: 11pt;
+    color: #111;
+  }
+
+  .menu-item-price-badge {
+    background: #f0d080;
+    color: #4a0808;
+    font-size: 9pt;
+  }
+
+  .rating {
+    display: none;
+  }
+
+  .menu-item-footer {
+    border-top: 0.5pt solid #eee;
+  }
+
+  .featured-section {
+    page-break-after: always;
+    margin-bottom: 24pt;
+  }
+
+  .featured-heading {
+    font-size: 14pt;
+    margin-bottom: 12pt;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-heading {
+    font-size: 16pt;
+    margin-bottom: 8pt;
+  }
+
+  .print-meta {
+    font-size: 10pt;
+    color: #444;
+    margin-bottom: 16pt;
+  }
+
+  .order-confirmation-summary {
+    border: 0.5pt solid #ccc;
+    padding: 12pt;
+  }
+
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+}
+
+.print-only {
+  display: none;
+}

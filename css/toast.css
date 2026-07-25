@@ -1,0 +1,124 @@
+.toast-container {
+  position: fixed;
+  bottom: var(--space-6);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: calc(100vw - var(--space-8));
+  max-width: 380px;
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-lg);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  pointer-events: auto;
+  animation: toast-in var(--duration-base) var(--ease-standard);
+}
+
+.toast.removing {
+  animation: toast-out var(--duration-fast) var(--ease-sharp) forwards;
+}
+
+.toast-icon {
+  flex-shrink: 0;
+  display: flex;
+}
+
+.toast-message {
+  flex: 1;
+}
+
+.toast-success {
+  background: var(--status-success-bg);
+  color: var(--status-success);
+  border-color: transparent;
+}
+
+.toast-error {
+  background: var(--status-error-bg);
+  color: var(--status-error);
+  border-color: transparent;
+}
+
+.toast-info {
+  background: var(--status-info-bg);
+  color: var(--status-info);
+  border-color: transparent;
+}
+
+.toast-warning {
+  background: var(--status-warning-bg);
+  color: var(--status-warning);
+  border-color: transparent;
+}
+
+[data-theme="dark"] .toast-success {
+  color: #a0f0b8;
+}
+
+[data-theme="dark"] .toast-error {
+  color: #ffaaaa;
+}
+
+[data-theme="dark"] .toast-info {
+  color: #a8d4f5;
+}
+
+[data-theme="dark"] .toast-warning {
+  color: #f0d8a0;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toast-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(6px) scale(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toast {
+    animation: none;
+  }
+  .toast.removing {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+@media (min-width: 640px) {
+  .toast-container {
+    left: auto;
+    right: var(--space-6);
+    bottom: var(--space-6);
+    transform: none;
+    width: 100%;
+  }
+}
